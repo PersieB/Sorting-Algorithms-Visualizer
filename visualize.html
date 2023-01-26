@@ -66,7 +66,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-2 text-center text-lg-start">
-            <button type="button" id="newArray" class="btn btn-outline-primary" onclick="newArray()">New Array</button>
+            <button type="button" id="newArray" class="btn btn-outline-primary" onclick="makeBars()">New Array</button>
             <!--<a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true" >New Array</a>-->
         </div>
         <div class="col-lg-10 text-center text-lg-start">
@@ -84,6 +84,8 @@
         </div>
       </div>
     </div>
+    <section id="box-wrapper">
+    </section>
 
   </section><!-- End Hero -->
 
@@ -96,8 +98,30 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="js/array.js"></script>
+  
+
+  <script>
+    function makeBars(){
+      console.log('I was clkikcksk')
+      const array = Array(10).fill().map(() => Math.floor(100 * Math.random()));
+      //console.log(array);
+      const boxWrapper = document.getElementById("box-wrapper");
+      for(let i=0; i < array.length; i++){
+
+
+          const box = document.createElement("div");
+          box.innerHTML = '<b>'+ array[i]+ '<b>';
+          box.style.backgroundColor = "orange";
+          box.style.height = array[i]*5 + "px";
+          box.classList.add("box");
+
+          
+          
+          boxWrapper.appendChild(box);
+          
+      }
+    }
+  </script>
 
 </body>
 
