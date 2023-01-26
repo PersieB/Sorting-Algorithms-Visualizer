@@ -4,9 +4,9 @@ function createBars(){
     console.log(array);
     
     // creating bars from the random numbers generated
-    const bardiv = document.getElementsByClassName("row");
+    var bardiv = document.getElementsByClassName("row");
     for(let i=0; i < array.length; i++){
-        const bar = document.createElement("div").className = "barCharts";
+        let bar = document.createElement("div").className = "barCharts";
         let div_height = i*5 + "px";
         bar.style.height = div_height;
         bardiv.appendChild(bar);
@@ -18,5 +18,4 @@ function newArray(){
     element.addEventListener("click", createBars);
 }
 
-createBars();
 
